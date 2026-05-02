@@ -1,0 +1,46 @@
+<%- include('layout', { title: 'Home', body: `
+<div class="row">
+  <div class="col s12 center">
+    <h2>Bienvenido a AuthApp</h2>
+    <p class="flow-text">Aplicación de Autenticación y Autorización</p>
+    
+    <div style="margin-top: 40px;">
+      <a href="/signIn" class="btn btn-large waves-effect waves-light blue">
+        <i class="material-icons left">login</i>
+        Iniciar Sesión
+      </a>
+      <a href="/signUp" class="btn btn-large waves-effect waves-light green" style="margin-left: 10px;">
+        <i class="material-icons left">person_add</i>
+        Registrarse
+      </a>
+    </div>
+
+    <div style="margin-top: 60px; background-color: #f5f5f5; padding: 30px; border-radius: 4px;">
+      <h4>Características</h4>
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="center">
+            <i class="material-icons" style="font-size: 48px; color: #2196F3;">security</i>
+            <h5>Seguridad</h5>
+            <p>Autenticación con JWT</p>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="center">
+            <i class="material-icons" style="font-size: 48px; color: #4CAF50;">verified_user</i>
+            <h5>Autorización</h5>
+            <p>Control de roles</p>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="center">
+            <i class="material-icons" style="font-size: 48px; color: #FF9800;">storage</i>
+            <h5>Datos</h5>
+            <p>MongoDB integrado</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+` }) %>

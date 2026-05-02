@@ -1,0 +1,18 @@
+<%- include('layout', { title: 'Sign In', body: ` 
+<h3>Iniciar Sesión</h3>
+<div class="row">
+  <form id="signInForm" class="col s12 m6">
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="email" type="email" required>
+        <label for="email">Email</label>
+      </div>
+      <div class="input-field col s12">
+        <input id="password" type="password" required>
+        <label for="password">Password</label>
+      </div>
+    </div>
+    <button class="btn waves-effect waves-light" type="submit">Sign In</button>
+  </form>
+</div>
+` }) %>

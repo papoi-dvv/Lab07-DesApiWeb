@@ -1,0 +1,44 @@
+<header>
+  <nav>
+    <div class="nav-wrapper container">
+      <a href="/" class="brand-logo">AuthApp</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li id="nav-auth">
+          <a href="/signIn">Sign In</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<script>
+  // Actualizar nav según si hay token
+  function updateNav() {
+    const token = sessionStorage.getItem('token');
+    const navAuth = document.getElementById('nav-auth');
+    if (token) {
+      try {
+        const payload = JSON.parse(atob(token.split('.')[1]));
+        const isAdmin = (payload.roles || []).includes('admin');
+        navAuth.innerHTML = `
+          <a href="/profile">Mi Cuenta</a>
+        `;
+        let navHtml = `<li><a href="/profile">Mi Cuenta</a></li>`;
+        if (isAdmin) navHtml += `<li><a href="/admin">Admin</a></li>`;
+        navHtml += `<li><a href="/dashboard">Dashboard</a></li>`;
+        navHtml += `<li><a href="#" onclick="logout(); return false;">Logout</a></li>`;
+        navAuth.parentElement.innerHTML = navHtml;
+      } catch (e) {
+        console.error('Token inválido', e);
+      }
+    }
+  }
+
+  function logout() {
+    sessionStorage.removeItem('token');
+    M.toast({ html: 'Sesión cerrada' });
+    setTimeout(() => location.href = '/signIn', 500);
+  }
+
+  document.addEventListener('DOMContentLoaded', updateNav);
+</script>
