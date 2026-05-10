@@ -4,7 +4,7 @@
  * Uso: node test.js
  */
 
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'https://express-auth-santoss.onrender.com';
 let adminToken = '';
 let userToken = '';
 
