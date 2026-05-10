@@ -4,7 +4,7 @@
  * Uso: node test.js
  */
 
-const BASE_URL = 'https://express-auth-santoss.onrender.com';
+const BASE_URL = 'https://lab07-desapiweb.onrender.com';
 let adminToken = '';
 let userToken = '';
 

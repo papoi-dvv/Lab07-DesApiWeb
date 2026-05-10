@@ -54,7 +54,7 @@ mongoose.connect(process.env.MONGODB_URI, { autoIndex: true })
         await seedUsers();
         
         app.listen(PORT, () => {
-            console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
+            console.log(`🚀 Servidor corriendo en https://lab07-desapiweb.onrender.com`);
         });
     })
     .catch(err => {
